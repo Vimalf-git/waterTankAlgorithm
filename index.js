@@ -24,14 +24,14 @@ const tableCreate = (input) => {
                     td1.style.backgroundColor = 'blue';
                     total += 1;
                 } else {
-                    td.innerHTML = "";
+                    td.innerHTML = "purple";
                     td1.innerHTML = "";
                 }
             } else {
                 if (e >= i) {
                     td.style.backgroundColor = "yellow";
                 } else {
-                    td.innerHTML = "";
+                    td.innerHTML = "red";
                 }
                 d = e;
             }
@@ -44,19 +44,33 @@ const tableCreate = (input) => {
 
     };
     tableBody.append(table)
-
     let outputUnits = document.getElementById('outputUnits');
     outputUnits.innerText = `output:-${total} Units`;
     tableBody1.append(table1)
+
+
 }
 
 
 const sendBtn = document.getElementById('sendBtn');
 sendBtn.addEventListener('click', () => {
     const input = document.getElementById('arrVal').value.split(',');
+    let outputUnits = document.getElementById('outputUnits');
     for (let val of input) {
         if (isNaN(parseInt(val))) {
             alert('please enter valid input');
+            table.innerHTML = 'No Data Found';
+            table1.innerHTML = 'No Data Found';
+            outputUnits.innerText = ``;
+
+            return '';
+        } else if (parseInt(val) < 0) {
+            alert('please enter positive no or zero ')
+            table.innerHTML = 'No Data Found';
+            table1.innerHTML = 'No Data Found';
+            outputUnits.innerText = ``;
+
+            return "";
         }
     }
     tableCreate(input);
