@@ -24,14 +24,14 @@ const tableCreate = (input) => {
                     td1.style.backgroundColor = 'blue';
                     total += 1;
                 } else {
-                    td.innerHTML = "purple";
+                    td.innerHTML = "";
                     td1.innerHTML = "";
                 }
             } else {
                 if (e >= i) {
                     td.style.backgroundColor = "yellow";
                 } else {
-                    td.innerHTML = "red";
+                    td.innerHTML = "";
                 }
                 d = e;
             }
