@@ -1,15 +1,12 @@
-
 const table = document.createElement('table');
 const table1 = document.createElement('table');
 
 const tableCreate = (input) => {
-    // console.log(input);
     let maxVal = Math.max(...input)
     table.innerHTML = '';
     table1.innerHTML = '';
     let tableBody = document.getElementById('tableData');
     let tableBody1 = document.getElementById('tableData1');
-
     let total = 0;
     for (let i = maxVal; i > 0; i--) {
         let tr = document.createElement('tr');
@@ -38,19 +35,14 @@ const tableCreate = (input) => {
             tr.append(td);
             tr1.append(td1);
         })
-
         table.append(tr)
         table1.append(tr1)
-
     };
     tableBody.append(table)
     let outputUnits = document.getElementById('outputUnits');
     outputUnits.innerText = `output:-${total} Units`;
     tableBody1.append(table1)
-
-
 }
-
 
 const sendBtn = document.getElementById('sendBtn');
 sendBtn.addEventListener('click', () => {
@@ -62,14 +54,12 @@ sendBtn.addEventListener('click', () => {
             table.innerHTML = 'No Data Found';
             table1.innerHTML = 'No Data Found';
             outputUnits.innerText = ``;
-
             return '';
         } else if (parseInt(val) < 0) {
             alert('please enter positive no or zero ')
             table.innerHTML = 'No Data Found';
             table1.innerHTML = 'No Data Found';
             outputUnits.innerText = ``;
-
             return "";
         }
     }
